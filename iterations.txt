@@ -1,0 +1,5 @@
+Iteration 1:
+This works as a context condenser at the moment, honing in on messages that seem important
+I need to take this in the direction of something that can take keywords based on what the user wants to bring out, rather than a composite context summary
+
+Iteration 2:

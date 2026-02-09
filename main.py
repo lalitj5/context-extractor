@@ -22,7 +22,7 @@ def main():
         print("Error: ANTHROPIC_API_KEY not found in .env file")
         return
 
-    # initialize client
+    # initialize anthropic api
     client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
 
     # load transcript
@@ -41,6 +41,8 @@ def main():
     summary = synthesize(flagged, client)
 
     # output result
+    # (output file provided) ? writes in file : writes summary in terminal
+    # ternary if-else documentation pog
     if args.output:
         with open(args.output, "w", encoding="utf-8") as f:
             f.write(summary)
