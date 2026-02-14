@@ -3,4 +3,6 @@ This works as a context condenser at the moment, honing in on messages that seem
 I need to take this in the direction of something that can take keywords based on what the user wants to bring out, rather than a composite context summary
 
 Iteration 2:
-I need to collect the exact set of messages and link them to each word
+I need to collect the exact set of messages and link them to each word.
+
+After doing it, the repo now contains a method to generate datasets by just chanign the list of possible topics. also implemented a way to segment chats (via LLM, can look into native attention based ones too) so that it collects topics and the individual messages. need to still figure out a way to distill this context into a chat prior to firts message, in order to frontload the context
