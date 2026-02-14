@@ -14,7 +14,7 @@ SCENARIOS = [
     "A student learning calculus and using the chat to complete their homework. The student also works on parts of his economics homework, which is unrelated to the other topic."
 ]
 
-
+# num_turns here means number of exchanged messages between chatbot and user
 def generate_conversation(client, scenario, num_turns):
     response = client.messages.create(
         model="claude-sonnet-4-20250514",
@@ -24,17 +24,17 @@ def generate_conversation(client, scenario, num_turns):
                 "role": "user",
                 "content": f"""Generate a realistic chat transcript as a JSON array.
 
-Scenario: {scenario}
+                Scenario: {scenario}
 
-Requirements:
-- Exactly {num_turns} messages, alternating "user" and "assistant" roles (starting with "user")
-- Each message must have "role" and "content" fields
-- Make the conversation feel natural — include topic shifts, corrections, callbacks to earlier points, and evolving decisions
-- The user should sometimes change their mind, ask follow-ups, or push back
-- Include specific technical details, names, or numbers where relevant
-- Keep individual messages concise (1-3 sentences typically)
+                Requirements:
+                - Exactly {num_turns} messages, alternating "user" and "assistant" roles (starting with "user")
+                - Each message must have "role" and "content" fields
+                - Make the conversation feel natural — include topic shifts, corrections, callbacks to earlier points, and evolving decisions
+                - The user should sometimes change their mind, ask follow-ups, or push back
+                - Include specific technical details, names, or numbers where relevant
+                - Keep individual messages concise (1-3 sentences typically)
 
-Return ONLY the JSON array, no other text."""
+                Return ONLY the JSON array, no other text."""
             }
         ]
     )
